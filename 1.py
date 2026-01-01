@@ -1,8 +1,6 @@
 
-def my_function():
-	print('Hello World!')
-	x = 10
-	print(x ** 2)
-
-my_function()
-my_function()
+def say_hello(name):
+	"""This is custom function description - docstring"""
+	print(f'Hello, {name}')
+	
+say_hello('Dan')
