@@ -1,17 +1,29 @@
 
-dict1 = {'a': 1, 'b': 2}
-dict2 = {'b': 3, 'c': 4}
+# names = {'tom', 'ANNE', 'John', 'dAn'}
+# print(id(names))
+# names = {n.capitalize() for n in names}
+# print(id(names))
+# print(names)
 
-# merged_dict = dict1 | dict2
-# print(merged_dict)
-# print(id(dict1))
-# print(id(dict2))
-# print(id(merged_dict))
+# d1 = {'a': 1, 'b': 2, 'c': 3}
+# d2 = {k*2: v*2 for k,v in d1.items()}
+# print(d2)
 
-print(f'{id(dict1)} - id dict1 before merge')
-print(f'{dict1} - dict1 before merge')
-dict1 |= dict2
-print(dict1)
-print(dict2)
-print(id(dict1))
-print(id(dict2))
+# d3 = {k.upper(): v*2 for k,v in d1.items()}
+# print(d3)
+
+# d4 = {k.upper(): v*2 for k,v in d1.items() if v % 3 == 0}
+# print(d4)
+
+years = [2020, 2021, 2022]
+revenues = [10000, 50000, 10000]
+z = zip(years, revenues)
+#print(z)
+sales = list(z)
+print(sales)
+
+sales_dict = dict(zip(years, revenues))
+print(sales_dict)
+
+profit = {k: v*0.15 for k,v in sales_dict.items()}
+print(profit)
