@@ -4,6 +4,9 @@ dict2 = {'b': 3, 'c': 4}
 
 merged_dict = dict1 | dict2
 print(merged_dict)
+print(id(dict1))
+print(id(dict2))
+print(id(merged_dict))
 
 # dict1 |= dict2
 # print(dict1)
