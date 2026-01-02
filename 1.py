@@ -1,14 +1,11 @@
 
-# Write a function called get_vat() with 2 parameters, price and vat percentage
-# It calculates and returns the VAT (value-added tax).
-# YOUR CODE STARTS HERE
+def my_function(**kwargs):
+	print(kwargs)
+	for k, v in kwargs.items():
+		print(f'k is {k} an v is {v}')
 
-def get_vat(price, vat_percentage):
-	vat = price * (vat_percentage / 100)
-	return vat
-	
+my_function(name='Bob', age=30, location = 'London', job='dev')
 
+person = {'name':'Bobby', 'age':35, 'location': 'Berlin', 'job':'devvv'}
+my_function(**person)
 
-# Capture the returned value in a new variable called vat.
-vat = get_vat(100, 20)
-print(f' vat is: {vat} %')
