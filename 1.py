@@ -1,11 +1,8 @@
 
-list_orig = [1,2,3,3,3,3,4,5, 1, 3, 5, 5, 5]
+#f = open('settings.txt')
+#f = open('./settings.txt')
+f = open('dir1/script1.py')
+print(f.closed)
+f.close()
+print(f.closed)
 
-def list_uniq(list_to_uniq):
-	t1 = set(list_to_uniq)
-	t2 = list(t1)
-	return t2
-
-n = list_uniq(list_orig)
-
-print(n)
