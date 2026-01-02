@@ -1,26 +1,27 @@
+with open('configuration.txt') as f:
+	content = f.read().splitlines()
+	print(content)
+print('-' * 30)
 
-# f = open('configuration.txt')
-# content = f.read(5)
-# print(content)
+with open('configuration.txt') as f:
+	content = f.readlines()
+	print(content)
+print('-' * 30)
 
-# content = f.read(3)
-# print(content)
+with open('configuration.txt') as f:
+	content = f.readline()
+	print(content, end='')
+	content = f.readline()
+	print(content, end='')
+print('-' * 30)
 
-# print(f.tell())
+with open('configuration.txt') as f:
+	content = list(f)
+	print(content)
+print('-' * 30)
 
-# f.seek(2)
-# content = f.read(3)
-# print(content)
-# print(f.tell())
-
-# f.close()
-
-f = open('configuration.txt')
-print(f.read())
-f.close()
-
-f = open('configuration.txt')
-print('#' * 20)
-#f.seek(0)
-print(f.read())
-f.close()
+with open('configuration.txt') as f:
+	for line in f:
+		print(line, end='')
+print('')
+print('-' * 30)
