@@ -1,27 +1,15 @@
-with open('configuration.txt') as f:
-	content = f.read().splitlines()
-	print(content)
-print('-' * 30)
 
-with open('configuration.txt') as f:
-	content = f.readlines()
-	print(content)
-print('-' * 30)
+with open('myfile.txt', 'w') as file:
+	file.write('line number 1\n')
+	file.write('line number 2')
 
-with open('configuration.txt') as f:
-	content = f.readline()
-	print(content, end='')
-	content = f.readline()
-	print(content, end='')
-print('-' * 30)
+with open('myfile.txt', 'a') as f:
+	f.write('\nline number 3 appended\n')
+	f.write('line number 4\n')
 
-with open('configuration.txt') as f:
-	content = list(f)
-	print(content)
-print('-' * 30)
+with open('myfile.txt', 'r+') as f:
+	f.write('\nline number 5 appended\n')
+	f.write('line number 6\n')
 
-with open('configuration.txt') as f:
-	for line in f:
-		print(line, end='')
-print('')
-print('-' * 30)
+	print(f.read())
+
