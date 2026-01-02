@@ -1,15 +1,10 @@
+with open('devices.txt', 'r') as f:
+	content = f.read().splitlines()
+	devices = list()
+	for line in content[1:]:
+		devices.append(line.split(':'))
 
-with open('myfile.txt', 'w') as file:
-	file.write('line number 1\n')
-	file.write('line number 2')
+print(devices)
 
-with open('myfile.txt', 'a') as f:
-	f.write('\nline number 3 appended\n')
-	f.write('line number 4\n')
-
-with open('myfile.txt', 'r+') as f:
-	f.write('\nline number 5 appended\n')
-	f.write('line number 6\n')
-
-	print(f.read())
-
+for device in devices:
+	print(f'ping {device[1]}')
