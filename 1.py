@@ -1,10 +1,8 @@
-with open('devices.txt', 'r') as f:
-	content = f.read().splitlines()
-	devices = list()
-	for line in content[1:]:
-		devices.append(line.split(':'))
+with open('macs.txt', 'r') as f:
+	content = f.read().split()
+	content = list(set(content))
 
-print(devices)
-
-for device in devices:
-	print(f'ping {device[1]}')
+#print(content)
+with open('mac_unique.txt', 'w', newline='') as f:
+	for mac in content:
+		f.write(f'{mac}\n')
