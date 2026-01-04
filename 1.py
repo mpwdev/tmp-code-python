@@ -1,14 +1,17 @@
 
-class RobotTest:
-	"""Test class for robot functionality"""
-	def __init__(self, name="Robo", year=2024):
-		self.name = name
-		self.year = year
-	
-	def __del__(self):
-		print(f'Robot {self.name} is being destroyed')
+## Defining a class
+class Circle:
+    def __init__(self, radius):    # instance attribute
+        self.radius = radius
 
-r1 = RobotTest('R1', 2025)
-#print(r1.__doc__)
-print(f'Robot name: {r1.name}')
-print(r1.__dict__)
+    ## Define a  Magic Method that is automatically called when printing an object
+    ## YOUR CODE STARTS HERE
+    def __str__(self):
+        return str(self.radius)
+
+
+## Creating an instance called moon with radius 1737
+moon = Circle(1737)
+
+## Printing the moon object
+print(moon)
