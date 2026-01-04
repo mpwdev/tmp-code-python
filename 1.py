@@ -1,19 +1,17 @@
 
-with open('banking.txt', 'r') as f:
-    content = f.read().splitlines()
-    # print(content)
+import string
 
-    deposit, withdrawal = 0, 0
+letters = dict()
 
-    for item in content:
-        tmp = item.split(':')
-        # print(tmp) # -> ['D', '300']
-        if  tmp[0] == 'D':
-            deposit += int(tmp[1])
-        elif tmp[0] == 'W':
-            withdrawal += int(tmp[1])
-        else:
-            print('File format error')
+# initializing the dictionary with all letters as keys and zero as values
+for c in string.ascii_letters:
+    letters[c] = 0
 
-    balance = deposit - withdrawal
-    print(balance)
+# print(letters)
+
+with open('american-english.txt', 'r') as words:
+    for w in words:
+        for char in string.ascii_letters:
+            letters[char] += w.count(char)
+
+print(letters)
