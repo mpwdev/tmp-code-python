@@ -1,8 +1,6 @@
-with open('macs.txt', 'r') as f:
-	content = f.read().split()
-	content = list(set(content))
+with open('sample_file.txt', 'r') as f:
+	content = f.read().splitlines()
+	content = '\n'.join(content)
 
-#print(content)
-with open('mac_unique.txt', 'w', newline='') as f:
-	for mac in content:
-		f.write(f'{mac}\n')
+print(content)
+
