@@ -1,3 +1,2 @@
-import os
-output = os.popen('arp -a').read()
-print(output)
+import random
+print(random.randint(4, 10))
