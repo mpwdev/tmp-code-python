@@ -3,9 +3,11 @@ connection = sqlite3.connect('my_db01.db')
 
 cursor = connection.cursor()
 
-sql = 'select * from employees;'
+id = input('Enter an ID: ')
 
-cursor.execute(sql)
+sql = 'select * from employees where id = ?'
+
+cursor.execute(sql, (id,))
 
 for row in cursor.fetchall():
 	print(row)
