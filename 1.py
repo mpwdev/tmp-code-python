@@ -1,13 +1,19 @@
-import json
-import requests
+import sqlite3
+connection = sqlite3.connect('my_db01.db')
 
-response = requests.get('https://jsonplaceholder.typicode.com/todos')
+cursor = connection.cursor()
 
-todos = json.loads(response.text)
+sql = '''
+CREATE TABLE IF NOT EXISTS employees (
+    id INTEGER,
+    name VARCHAR(64),
+    department VARCHAR(32),
+		phone VARCHAR(16),
+		email VARCHAR(32)
+);
+'''
 
-print(type(todos))
-#print(todos)
+cursor.execute(sql)
+connection.commit()
 
-for task in todos:
-	if task['completed'] == True:
-		print(task)
+connection.close()
