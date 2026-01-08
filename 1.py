@@ -3,17 +3,11 @@ connection = sqlite3.connect('my_db01.db')
 
 cursor = connection.cursor()
 
-sql = '''
-CREATE TABLE IF NOT EXISTS employees (
-    id INTEGER,
-    name VARCHAR(64),
-    department VARCHAR(32),
-		phone VARCHAR(16),
-		email VARCHAR(32)
-);
-'''
+sql = 'select * from employees;'
 
 cursor.execute(sql)
-connection.commit()
+
+for row in cursor.fetchall():
+	print(row)
 
 connection.close()
