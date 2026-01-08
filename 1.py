@@ -5,11 +5,10 @@ cursor = connection.cursor()
 
 id = input('Enter an ID: ')
 
-sql = 'select * from employees where id = ?'
+sql = 'UPDATE employees SET phone="123123" where id = ?'
 
 cursor.execute(sql, (id,))
 
-for row in cursor.fetchall():
-	print(row)
+connection.commit()
 
 connection.close()
