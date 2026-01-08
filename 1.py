@@ -5,7 +5,7 @@ cursor = connection.cursor()
 
 id = input('Enter an ID: ')
 
-sql = 'UPDATE employees SET phone="123123" where id = ?'
+sql = 'DELETE from employees where id = ?'
 
 cursor.execute(sql, (id,))
 
