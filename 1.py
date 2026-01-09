@@ -1,14 +1,12 @@
-import sqlite3
-connection = sqlite3.connect('my_db01.db')
+def sum(number, fn):
+	result = 0
+	for i in range(1, number + 1):
+		result += fn(i)
+	return result
 
-cursor = connection.cursor()
+def square(x):
+	#print(x, x ** 2)
+	return x ** 2
 
-id = input('Enter an ID: ')
-
-sql = 'DELETE from employees where id = ?'
-
-cursor.execute(sql, (id,))
-
-connection.commit()
-
-connection.close()
+result = sum(3, square)  # Should return 14
+print(result)
