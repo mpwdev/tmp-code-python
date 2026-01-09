@@ -1,12 +1,15 @@
-def sum(number, fn):
-	result = 0
-	for i in range(1, number + 1):
-		result += fn(i)
-	return result
+def outer():
+	msg = 'Python'
+	x = 1
+	def inner():
+		print(f'{msg} is really cool')
+		nonlocal x
+		x += 1
+		print(x)
+	return inner
 
-def square(x):
-	#print(x, x ** 2)
-	return x ** 2
+fn = outer()
+fn()
+fn()
 
-result = sum(3, square)  # Should return 14
-print(result)
+print(fn.__code__.co_freevars)  # Accessing the closed-over variable directly
