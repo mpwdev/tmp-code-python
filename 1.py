@@ -1,15 +1,18 @@
-def outer():
-	msg = 'Python'
-	x = 1
-	def inner():
-		print(f'{msg} is really cool')
-		nonlocal x
-		x += 1
-		print(x)
-	return inner
 
-fn = outer()
-fn()
-fn()
+user = {'username': 'js', 'level': 'admin33'}
 
-print(fn.__code__.co_freevars)  # Accessing the closed-over variable directly
+# decorator example
+def user_has_permission(func):
+	if user['level'] == 'admin':
+		return func
+	else:
+		return None
+	
+def show_pass():
+	return "password123"
+
+my_function = user_has_permission(show_pass)
+if my_function != None:
+	print(my_function())
+else:
+	print('No access')
