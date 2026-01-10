@@ -1,8 +1,18 @@
 
+import functools
 user = {'username': 'js', 'level': 'admin'}
 
 def only_admin(func):
+	@functools.wraps(func)
 	def wrapper_only_admin(*args, **kwargs):
+		'''
+		------------
+		Docstring for wrapper_only_admin
+		
+		:param args: Description
+		:param kwargs: Description
+		------------
+		'''
 		if user['level'] == 'admin':
 			return func(*args, **kwargs)
 		else:
@@ -36,6 +46,9 @@ def create_user_and_group(user, group):
 
 @only_admin
 def update_system():
+	'''
+	Docstring for update_system
+	'''
 	print(f'This function update the OS')
 	# code here
 
@@ -46,3 +59,6 @@ except PermissionError as e:
 
 create_user_and_group('admin', 'sudo')
 update_system()
+
+print(update_system.__doc__)
+print(update_system.__name__)
