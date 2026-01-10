@@ -1,5 +1,5 @@
 
-user = {'username': 'js', 'level': 'admin33'}
+user = {'username': 'js', 'level': 'admin'}
 
 def only_admin(func):
 	def wrapper_only_admin(*args, **kwargs):
@@ -20,6 +20,7 @@ def only_admin(func):
 
 @only_admin # @ syntax
 def show_pass():
+	print('pass for admin xxxxxxx')
 	return "password123"
 
 # try:
@@ -28,7 +29,20 @@ def show_pass():
 # except PermissionError as e:
 # 	print(e)
 
+@only_admin
+def create_user_and_group(user, group):
+	print(f'This function create user {user} and group {group}')
+	# code here
+
+@only_admin
+def update_system():
+	print(f'This function update the OS')
+	# code here
+
 try:
 	show_pass()
 except PermissionError as e:
 	print(e)
+
+create_user_and_group('admin', 'sudo')
+update_system()
