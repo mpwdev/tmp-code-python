@@ -1,22 +1,16 @@
-import csv
+import openpyxl
 
-people = [
-['Dan', 34, 'Bucharest'],
-['Andrei',21, 'London'],
-['Maria', 45, 'Paris']
-]
+wb = openpyxl.load_workbook('store.xlsx')
 
-# for i in people:
-# 	print(i)
-# 	for b in i:
-# 		print(b)
+#print(wb.sheetnames)
 
-with open('people1.csv', 'w') as f:
-	writer = csv.writer(f, delimiter=':', lineterminator='\n')
-	for row in people:
-		writer.writerow(row)
+#for sheet in wb:
+#	print(sheet.title)
 
-with open('people1.csv', 'r') as f:
-	reader = csv.reader(f, delimiter=':')
-	for row in reader:
-		print(row)
+sheet = wb['Products']
+#sheet = wb.active
+
+b2_cell = sheet['B2']
+c2_cell = sheet['c2'] # case insensitive
+
+print(b2_cell.value, c2_cell.value)
