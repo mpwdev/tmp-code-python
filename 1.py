@@ -1,29 +1,17 @@
 import openpyxl
 
-wb = openpyxl.load_workbook('store.xlsx', data_only=True)
+wb = openpyxl.Workbook()
 
-#print(wb.sheetnames)
+sheet = wb.active
 
-#for sheet in wb:
-#	print(sheet.title)
+sales = {2017:700000, 2018:800000, 2019: 900000}
 
-sheet = wb['Products']
-#sheet = wb.active
+sheet['A1'] = 'Year'
+sheet['B1'] = 'Sales'
 
-# b2_cell = sheet['B2']
-# c2_cell = sheet['c2'] # case insensitive
+for k,v in sales.items():
+	sheet.append((k,v))
 
-# print(sheet['d2'].value)
-# sheet['d2'] = 400
-# print(sheet['d2'].value)
-
-# new_product = (11, 'Tablet', 12, 600, 12 * 600)
-# sheet.append(new_product)
-
-for c, d, e in sheet['c2:e12']:
-	e.value = c.value * d.value
-
-
-wb.save('store.xlsx')
+	wb.save('sales.xlsx')
 
 
