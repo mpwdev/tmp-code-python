@@ -12,12 +12,16 @@ sheet = wb['Products']
 
 # b2_cell = sheet['B2']
 # c2_cell = sheet['c2'] # case insensitive
-print(sheet['d2'].value)
-sheet['d2'] = 400
-print(sheet['d2'].value)
 
-new_product = (11, 'Tablet', 12, 600, 12 * 600)
-sheet.append(new_product)
+# print(sheet['d2'].value)
+# sheet['d2'] = 400
+# print(sheet['d2'].value)
+
+# new_product = (11, 'Tablet', 12, 600, 12 * 600)
+# sheet.append(new_product)
+
+for c, d, e in sheet['c2:e12']:
+	e.value = c.value * d.value
 
 
 wb.save('store.xlsx')
