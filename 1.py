@@ -1,17 +1,12 @@
 import openpyxl
 
-wb = openpyxl.Workbook()
-
+wb = openpyxl.load_workbook('store.xlsx')
 sheet = wb.active
+sheet['e3'] = '=c3*d3'
 
-sales = {2017:700000, 2018:800000, 2019: 900000}
+for c, d, e in sheet['c2:e12']:
+	e.value = f'={c.coordinate}*{d.coordinate}'
 
-sheet['A1'] = 'Year'
-sheet['B1'] = 'Sales'
-
-for k,v in sales.items():
-	sheet.append((k,v))
-
-	wb.save('sales.xlsx')
+wb.save('store.xlsx')
 
 
