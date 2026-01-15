@@ -1,29 +1,17 @@
 import openpyxl
+from openpyxl.styles import *
 
 wb = openpyxl.load_workbook('store.xlsx')
-print(wb.sheetnames)
+sheet = wb.active
 
-sheet = wb['Products']
+my_cell = sheet['B4']
 
-# print(dir(sheet))
+# print(dir(openpyxl.styles))
 
-print(sheet.title)
-# sheet.title = 'Products New'
-# print(sheet.title)
+font = Font(name="Tahoma", size=16, color=colors.BLUE, bold=True, italic=True)
+my_cell.font = font
 
-# print(sheet.sheet_format)
-# print(sheet.sheet_properties)
 
-#wb.create_sheet('NewSheet1', 0)
-
-# print(wb.sheetnames)
-# sheet_to_remove = wb['NewSheet11']
-# wb.remove(sheet_to_remove)
-# print(wb.sheetnames)
-
-# source = wb['NewSheet1']
-# destination = wb.copy_worksheet(source)
-# print(destination.title)
 
 
 wb.save('store.xlsx')
