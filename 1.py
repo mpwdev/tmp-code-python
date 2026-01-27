@@ -1,5 +1,4 @@
-SECONDS_IN_HOUR = 3600
-SECONDS_IN_MIN = 60
-DAYS_IN_WEEK = 7
-PI = 3.14
+score = 10
+print(type(score), id(score))
+
 
