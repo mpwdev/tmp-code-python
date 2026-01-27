@@ -1,8 +1,5 @@
-max_value = 99
-# comment
-print(max_value) # comment
+SECONDS_IN_HOUR = 3600
+SECONDS_IN_MIN = 60
+DAYS_IN_WEEK = 7
+PI = 3.14
 
-# a = 10
-# b = 'John'
-# d = True
-# c = 5.67
