@@ -1,2 +1,8 @@
 max_value = 99
-print(max_value)
+# comment
+print(max_value) # comment
+
+# a = 10
+# b = 'John'
+# d = True
+# c = 5.67
