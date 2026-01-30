@@ -10,6 +10,6 @@ a = 9999999999.01
 b = 9999999999.02
 print(isclose(a, b, rel_tol=0.01))
 
-a = 3.4
-b = 2.3
-print(format(a+b, '.2f'))
+c = 4.5
+d = 6.7
+print(format(c + d, '.2f'))
